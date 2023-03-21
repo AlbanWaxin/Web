@@ -56,6 +56,7 @@ class Doctors extends Controller
         $_SESSION['doctor_id'] = $doctor['id'];
         $_SESSION['doctor_name'] = $doctor['name'];
         $_SESSION['doctor_email'] = $doctor['email'];
+        redirect("patients");
     }
 }
 

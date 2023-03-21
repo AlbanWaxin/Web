@@ -10,5 +10,5 @@ define('DB_NAME', 'TP');
 //App Root
 
 define('APPROOT', dirname(dirname(__FILE__)));
-define('URLROOT', 'http//wxnhospital.local');
+define('URLROOT', 'http://wxnhospital.local');
 define('SITENAME', 'Hospital Information System');
