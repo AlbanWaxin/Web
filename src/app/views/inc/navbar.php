@@ -13,7 +13,7 @@
                 </li>
                 <?php if (isLoggedIn()) { ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="/doctors/patients">Patiens</a>
+                        <a class="nav-link" href="/doctors/patients">Patients</a>
                     </li>
                 <?php } ?>
                 <!-- <li class="nav-item">

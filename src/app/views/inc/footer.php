@@ -1,0 +1,1 @@
+<p class="text-center text-muted">Made with ❤️ by <a href="http://github.com/jumscrafteur">Jugo</a></p>
