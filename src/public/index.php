@@ -1,9 +1,6 @@
 <?php
-require_once("../bootstrap.php");
+require_once("/var/www/html/bootstrap.php");
 
-require_once(APP_ROOT . "/controllers/Doctors.php");
+require_once(APP_ROOT . "/librairies/Core.php");
 
-
-$ds = new Doctors();
-
-$ds->login();
+new Core();

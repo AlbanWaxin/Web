@@ -20,9 +20,9 @@ class Doctor
 
     public function findByEmail($email)
     {
-        $sql = "SELECT * FROM $this->table  WHERE email = '$email'";
+        $sql = "SELECT * FROM $this->table  WHERE email = :email";
         $this->db->query($sql);
-        $this->db->execute();
+        $this->db->execute(['email' => $email]);
 
         return $this->db->rowCount() >= 1;
     }
@@ -63,13 +63,13 @@ class Doctor
 
         return false;
     }
-}
 
-// $doc = new Doctor();
-// var_dump($doc->create([
-//     "name" => 'Dr. James Park',
-//     "email" => 'james.park@example.com',
-//     "password" => 'passwordJKL',
-//     "specialist" => 'Cardiology',
-//     "gender" => 'M'
-// ]));
+
+    public function getPatients($id)
+    {
+        $sql = "SELECT * FROM patient WHERE doctor_id = :id";
+        $this->db->query($sql);
+        $this->db->execute(['id' => $id]);
+        return $this->db->resultSet();
+    }
+}

@@ -34,7 +34,6 @@ class Doctors extends Controller
 
             if (!isset($_POST['password'])) {
                 array_push($data['error'], 'Enter an Password');
-                // array_push($data['error'],'Enter an Password');
             } else {
                 $data['password'] = $_POST['password'];
             }
@@ -44,7 +43,12 @@ class Doctors extends Controller
 
             if (count($data['error']) == 0) {
                 $loggedInDoctor = $this->DoctorModel->login($_POST['email'], $_POST['password']);
+                // echo "BBBh";
+
                 if ($loggedInDoctor) {
+                    // echo "AAAh";
+                    // var_dump($loggedInDoctor);
+
                     $this->createDoctorSession($loggedInDoctor);
                 } else {
                     array_push($data['error'], 'Invalid Email or Password');
@@ -55,11 +59,29 @@ class Doctors extends Controller
         $this->render("login", $data);
     }
 
+    public function logout()
+    {
+        session_destroy();
+        redirect("pages/index");
+    }
+
+    public function patients()
+    {
+        if (!isLoggedIn())
+            redirect("pages/index");
+
+        $patients = $this->DoctorModel->getPatients($_SESSION['doctor_id']);
+
+
+
+        $this->render('patients', ['patients' => $patients]);
+    }
+
     public function createDoctorSession($doctor)
     {
         $_SESSION['doctor_id'] = $doctor['id'];
         $_SESSION['doctor_name'] = $doctor['name'];
 
-        header('/patiens');
+        redirect('doctors/patients');
     }
 }

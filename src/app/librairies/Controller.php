@@ -8,7 +8,7 @@ abstract class Controller
         return new $model();
     }
 
-    public function render($vue, array $data)
+    public function render($vue, array $data = [])
     {
         if (!empty($data))
             extract($data);
