@@ -1,4 +1,5 @@
 # TP WEB
+Cette branche contient la version de Hugo , pour celle de Mael et Alban voir la branche [master](https://github.com/AlbanWaxin/Web/)
 
 # Setup
 0. Lancer Docker (_optional_)
