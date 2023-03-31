@@ -13,4 +13,8 @@ class Pages extends Controller
     {
         $this->render("index");
     }
+    public function error_404()
+    {
+        $this->render("error_404");
+    }
 }

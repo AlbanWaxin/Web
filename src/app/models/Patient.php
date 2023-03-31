@@ -1,4 +1,5 @@
 <?php
+require_once(APP_ROOT . "/librairies/Database.php");
 
 class Patient
 {
@@ -9,7 +10,6 @@ class Patient
 
     public function __construct()
     {
-
         $this->db = new Database();
     }
 
@@ -28,5 +28,13 @@ class Patient
         $this->db->execute(['id' => $id]);
 
         return $this->db->single();
+    }
+
+    public function getByDoctor($doctorId){
+        $sql = "SELECT * FROM $this->table WHERE doctor_id = :doctor_id";
+        $this->db->query($sql);
+        $this->db->execute(['doctor_id' => $doctorId]);
+
+        return $this->db->resultSet();
     }
 }
