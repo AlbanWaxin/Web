@@ -1,8 +1,9 @@
 # TP WEB
+Cette branche contient la version de Mael et Alban , pour celle de hugo voir la branche [Hugo](https://github.com/AlbanWaxin/Web/tree/Hugo)
 
 # Setup
 
-1. Pour pouvoir utiliser le site internet , vous aurez besoin de d'une [base donnée](/src/app/config/config.php) avec les tables suivantes :
+1. Pour pouvoir utiliser le site internet , vous aurez besoin de d'une [base donnée](/app/config/config.php) avec les tables suivantes :
     - doctor
     - patient
 2. Créer un patient via `/doctors/register`
