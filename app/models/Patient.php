@@ -1,5 +1,7 @@
 <?php
 
+require_once(APPROOT . "/librairies/Database.php");
+
 Class Patient{
 
     private $db;

@@ -57,7 +57,7 @@ class Doctor{
 }
 
 // Test Section
-$doctor = new Doctor();
+//$doctor = new Doctor();
 //var_dump ($doctor->findDoctorsbyEmails("john.smith@example.com"));
 //echo "<br>";
 //var_dump($doctor->doctor_r);

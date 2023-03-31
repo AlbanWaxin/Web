@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="#"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -7,19 +7,19 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="/index">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Doctors</a>
+          <a class="nav-link" href="/doctors/login">Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/">Login</a>
+          <a class="nav-link" href="/doctors/register">Register</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Patients</a>
+          <a class="nav-link" href="/patients/index">Patients</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href= "app/views/pages/about.php">About</a>
+          <a class="nav-link" href= "/pages/about">About</a>
         </li>
       </ul>
     </div>

@@ -6,14 +6,16 @@ class Pages extends Controller
 {
     public function index()
     {
-        if (isLoggedIn()) {
-            redirect("patients");
-
-        }
+        $this -> render("index");
     }
 
     public function about()
     {
-        redirect("about");
+        $this -> render("about");
+    }
+
+    public function error_404()
+    {
+        $this -> render("error_404");
     }
 }
