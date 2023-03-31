@@ -16,12 +16,9 @@
                         <a class="nav-link" href="/patients">Patients</a>
                     </li>
                 <?php } ?>
-                <!-- <li class="nav-item">
-                    <a class="nav-link" href="#">Doctors</a>
-                </li> -->
             </ul>
         </div>
-        <div class="d-flex gap-1" role="search">
+        <div class="d-flex gap-1">
             <?php
             if (!isLoggedIn()) { ?>
                 <a class="btn btn-primary" href="/doctors/login" role="button">Log In</a>
