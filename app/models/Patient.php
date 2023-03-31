@@ -47,20 +47,25 @@ Class Patient{
         return $this->db->execute();
     }
 
-    public function updatePatient($data)
+    public function updatePatient($data,$id)
     {
         extract($data);
-        for ($i = 0; $i < count($data); $i++){
-            $sql = "UPDATE $this->table SET $data[$i] = '$data[$i]' WHERE id = '$id'";
-            $this->db->query($sql);
-            $this->db->execute();
-        }
-        return true;
+        $sql = "UPDATE $this->table SET name = '$name', email = '$email', phone = '$phone', health_condition = '$health_condition' WHERE id = $id";
+        echo $sql;
+        $this->db->query($sql);
+        return $this->db->execute();
     }
 
     public function getPatients()
     {
-        $sql = "SELECT * FROM $this->table Join doctor ON doctor.id = patient.doctor_id";
+        $sql = "SELECT ". $this->table .".name,".$this->table .".id,". $this->table .".email,". $this->table .".phone,". $this->table .".health_condition FROM $this->table Join doctor ON doctor.id = patient.doctor_id";
+        $this->db->query($sql);
+        return $this->db->resultSet();
+    }
+
+    public function getPatientById($id)
+    {
+        $sql = "SELECT * FROM $this->table Where id = '$id'";
         $this->db->query($sql);
         return $this->db->resultSet();
     }

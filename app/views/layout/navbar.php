@@ -9,18 +9,30 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/index">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/doctors/login">Login</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/doctors/register">Register</a>
-        </li>
+        
         <li class="nav-item">
           <a class="nav-link" href="/patients/index">Patients</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href= "/pages/about">About</a>
         </li>
+      </ul>
+    </div>
+    <div class = "d-flex gap-1">
+      <ul class="navbar-nav">
+
+        <?php if (isLoggedIn()) { ?>
+          <li class="nav-item">
+            <a class="nav-link" href="/doctors/log_out">Logout</a>
+          </li>
+        <?php } else { ?>
+          <li class="nav-item">
+          <a class="nav-link" href="/doctors/login">Login</a>
+        </li> 
+          <li class="nav-item">
+          <a class="nav-link" href="/doctors/register">Register</a>
+          </li>
+        <?php } ?>
       </ul>
     </div>
   </div>

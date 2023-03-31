@@ -14,7 +14,7 @@ class Doctors extends Controller
     public function login()
     {
         if (isloggedIn()) {
-            redirect("patients");
+            redirect("patients/index");
         }
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $data = [
@@ -54,6 +54,15 @@ class Doctors extends Controller
         }
     }
 
+    public function log_out(){
+        echo "logout";
+        unset($_SESSION['doctor_id']);
+        unset($_SESSION['doctor_email']);
+        unset($_SESSION['doctor_name']);
+        session_destroy();
+        redirect("index");
+    }
+    
     public function register(){
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $data = [
@@ -123,7 +132,7 @@ class Doctors extends Controller
         $_SESSION['doctor_id'] = $doctor['id'];
         $_SESSION['doctor_name'] = $doctor['name'];
         $_SESSION['doctor_email'] = $doctor['email'];
-        redirect("patients");
+        redirect("patients/index");
     }
 }
 
