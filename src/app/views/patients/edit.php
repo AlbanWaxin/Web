@@ -7,7 +7,7 @@
         </div>
     <?php } ?>
 </div>
-<form method="POST" action="/patients/add">
+<form method="POST" action="/patients/edit/<?= $data['id'] ?>">
     <!-- Champ pour le nom du patient -->
 
     <div class="form-group">
@@ -33,5 +33,5 @@
         <textarea class="form-control" id="health_condition" name="health_condition" rows="3"><?= $data["health_condition"] ?></textarea>
     </div>
     <!-- Bouton pour soumettre le formulaire -->
-    <button type="submit" class="btn btn-primary">Ajouter le patient</button>
+    <button type="submit" class="btn btn-primary">Modifier le patient</button>
 </form>
